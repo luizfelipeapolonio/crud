@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+body {
+    background: rgb(192, 200, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: 600px;
+    min-height: 400px;
+}
+
+#header {
+    display: flex;
+    justify-content:space-between;
+    padding-bottom: 1.3em;
+    padding-top: 0.3em;
+}
+
+#header span {
+    font: bold 18px Helvetica;
+    padding-top: 0.4em;
+}
+
+#btnCad {
+    padding: 0.5em;
+    border: none;
+    background: rgb(36, 47, 155);
+    color: white;
+    border-radius: 5px;
+    font: bold 15px Helvetica;
+    cursor: pointer;
+}
+
+#btnCad:hover {
+    background: rgb(0, 153, 255);
+}
+
+.divtable {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    overflow: auto;
+    font-size: 17px;
+    padding: 0px 10px 10px;
+    max-height: 400px;
+}
+
+table {
+    width: 100%;
+    word-wrap: break-word;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+#table th {
+    background: rgba(224, 223, 223, 0.456);
+    padding: 0.3em;
+    text-align: left;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.596);
+}
+
+#table td {
+   padding: 7px 3px 3px;
+   text-align: left;
+   border-bottom: 1px solid rgba(128, 128, 128, 0.596);
+}
+
+.acao {
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    padding: 5px;
+    transition: transform .2s;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.acao:hover {
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+#del {
+   margin-left: 15px;
+}
+
+
+/* ==== MODAL ==== */
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed; /* colocar a janela por cima de tudo */
+    top: 0px;
+    bottom: 0px;
+    z-index: 2000; /* garantir que ficará por cima de todos os itens */
+    display: none;
+    justify-content: center; /* alinhamento horizontal */
+    align-items: center; /* alinhamento vertical */
+    animation: modal .3s;
+}
+
+.modal {
+    background: white;
+    width: 30%;
+    min-width: 400px;
+    padding: 1em;
+    border-radius: 5px;
+    /*box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.354);*/
+    position: relative; /* ajuste para o botão fechar */
+    animation: descermodal .3s;
+}
+
+#btnfechar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 50%;
+    width: 1.8em;
+    height: 1.8em;
+    margin: 0.2em;
+    border: none;
+    /*font: bold 16px Helvetica;*/
+    font-size: 1.1em;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+}
+
+#btnfechar:hover {
+    background: rgb(36, 47, 155);
+    color: white;
+}
+
+#form {
+    margin-top: 1.2em;
+    padding: 0.4em 0.8em 0.4em;
+    font-size: 18px;
+}
+
+.modal input {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+    height: 25px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.763);
+    outline: none; /* tira as bordas quando selecionado */
+}
+
+.modal input:focus {
+    border-color: black;
+}
+
+.modal .abas {
+    font-weight: 600;
+}
+
+#form button {
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    border-radius: 15px;
+    background: rgb(36, 47, 155);
+    color: white;
+    cursor: pointer;
+}
+
+#form button:hover {
+    background: rgb(0, 153, 255);
+}
+
+#form button:disabled {
+    background: rgb(219, 223, 253);
+    color: rgb(112, 112, 112);
+}
+
+#btnsalvaredit {
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    border-radius: 15px;
+    background: rgb(36, 47, 155);
+    color: white;
+    cursor: pointer;
+}
+
+#btnsalvaredit:hover {
+    background: rgb(0, 153, 255);
+}
+
+#btnsalvaredit:disabled {
+    background: rgb(219, 223, 253);
+    color: rgb(112, 112, 112);
+}
+
+#btnfecharedit {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 50%;
+    width: 1.8em;
+    height: 1.8em;
+    margin: 0.2em;
+    border: none;
+    /*font: bold 16px Helvetica;*/
+    font-size: 1.1em;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+}
+
+#btnfecharedit:hover {
+    background: rgb(36, 47, 155);
+    color: white;
+}
+
+
+/* ====== ANIMAÇÕES MODAL ====== */
+@keyframes modal {
+    from{
+        opacity: 0;
+        /*transform: translateY(-10px)*/
+    }
+    to {
+        opacity: 1;
+        /*transform: translate(0px);*/
+    }
+}
+
+@keyframes descermodal {
+    from{
+        transform: translateY(-20px)
+    }to{
+        transform: translateY(0px)
+    }
+}
+
+/* ====== SCROLL DA TABELA ====== */
+.divtable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.divtable::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 5px;
+}
+
+.divtable::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
