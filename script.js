@@ -89,6 +89,7 @@ function addTabela(n, f, s) {
 
 //Chama janela modal no botão cadastrar
 function modalCad() {
+    btnsalvar.disabled = true;
     modal.style.display = 'flex'
     nome.focus()
 }

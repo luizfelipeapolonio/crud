@@ -6,7 +6,7 @@
 }
 
 body {
-    background: rgb(192, 200, 255);
+    background-image: radial-gradient(rgb(154, 166, 247), rgb(17, 44, 223));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +17,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    background: white;
+    background: rgba(255, 255, 255, 0.800);
     padding: 0.5em;
     border-radius: 5px;
     width: 600px;
@@ -118,7 +118,7 @@ table {
 }
 
 .modal {
-    background: white;
+    background: rgba(255, 255, 255, 0.800);
     width: 30%;
     min-width: 400px;
     padding: 1em;
@@ -140,7 +140,7 @@ table {
     /*font: bold 16px Helvetica;*/
     font-size: 1.1em;
     font-weight: 600;
-    background: white;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -164,6 +164,13 @@ table {
     border: none;
     border-bottom: 2px solid rgba(128, 128, 128, 0.763);
     outline: none; /* tira as bordas quando selecionado */
+    background-color: transparent;
+}
+
+/* Tirando flechas do input number */
+.modal input[type="number"]::-webkit-outer-spin-button,
+.modal input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .modal input:focus {
@@ -228,7 +235,7 @@ table {
     /*font: bold 16px Helvetica;*/
     font-size: 1.1em;
     font-weight: 600;
-    background: white;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -264,7 +271,7 @@ table {
 }
 
 .divtable::-webkit-scrollbar-track {
-    background: white;
+    background: transparent;
     border-radius: 5px;
 }
 
